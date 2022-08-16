@@ -1,0 +1,52 @@
+
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <section class="login">
+          <div id="docreg"><b>Make an appointment</b></div><br>
+          <form novalidate (ngSubmit)="patientAppointment()" class="docform col-lg-6 m=auto" #regForm="ngForm">
+            <div class="form-group">
+              <label>Date </label>
+              <input type="date" name="dateOfAppointment" [min]="now" required #dateOfAppointment="ngModel" class="form-control"
+                [class.is-invalid]="dateOfAppointment.touched && dateOfAppointment.invalid"
+                [(ngModel)]="appointment.dateOfAppointment">
+              <small class="text-danger" [class.d-none]="dateOfAppointment.valid || dateOfAppointment.untouched">Date is
+                required</small>
+            </div>
+            <div class="form-group">
+              <label>Time </label>
+              <input type="time" name="timeOfAppointment" required #timeOfAppointment="ngModel" class="form-control"
+                [class.is-invalid]="timeOfAppointment.touched && timeOfAppointment.invalid"
+                [(ngModel)]="appointment.timeOfAppointment">
+              <small class="text-danger" [class.d-none]="timeOfAppointment.valid || timeOfAppointment.untouched">Time is
+                required</small>
+            </div>
+
+           
+            <div class="form-group">
+              <label>Doctor</label>
+              <select class="custom-select" name="doctor" required #doctor="ngModel" [(ngModel)]="appointment.doctor"
+                [class.is-invalid]="doctor.invalid && doctor.touched">
+                <option value="">Select Doctor</option>
+                <option *ngFor="let doctor of doctors">
+                    {{doctor.name}}
+                </option>
+              </select>
+              <small class="text-danger" [class.d-none]="doctor.valid || doctor.untouched">please select a
+                doctor</small>
+            </div> 
+            <button class="btn btn-primary" type="submit" [disabled]="regForm.invalid">Submit form</button>
+          </form>
+        </section>
+      </div>
+      <div class="col">
+  <br><br>
+        <b class="app"> Appointment
+          <br>Booking
+        </b>
+       
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+.card img{
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+    padding: 10px;
+  }
+  .card-footer{
+    background-color: rgb(122, 174, 235);
+  }
+  .card{
+    background-color: rgb(205, 223, 244);
+  }

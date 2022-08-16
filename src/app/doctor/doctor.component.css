@@ -1,0 +1,23 @@
+.patient {
+    font-size: 28;
+    color: blueviolet;
+}
+.navbar{
+    background-color:aliceblue;
+
+}
+.navbar-brand{
+  color: rgb(228, 42, 9);
+  text-shadow: 2px 2px #424244;
+  font-size: 40px;
+  border-radius: 2px;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: rgb(78, 78, 230);
+    font-size: 20px;
+  
+}
+.navbar-light .navbar-nav .nav-link{
+  text-shadow: 1px;
+  
+}

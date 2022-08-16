@@ -1,0 +1,36 @@
+.image img{
+    max-width: 100%;
+    height: auto;
+      margin-top: 20px;
+      padding-top: 20px;
+      object-position: center;
+      object-fit: cover;
+  }
+  .dash{
+    background-color: rgba(159, 238, 248, 0.95);
+  }
+  .app{
+    font-size: 50px;
+  }
+  .patient {
+      font-size: 28;
+      color: blueviolet;
+  }
+  .container{
+    margin-top: 2px;
+    background-image: url(/assets/back.jfif);
+  }
+  
+  .navbar-brand{
+    color: rgb(228, 42, 9);
+    text-shadow: 2px 2px #424244;
+    font-size: 40px;
+    border-radius: 2px;
+  }
+  .navbar-light .navbar-nav .nav-link{
+      color: rgb(78, 78, 230);
+      font-size: 20px;
+  }
+  .navbar-light .navbar-nav .nav-link{
+    text-shadow: 1px;
+  }

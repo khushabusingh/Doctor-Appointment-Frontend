@@ -1,0 +1,86 @@
+
+
+<section class="doctor">
+    <div id="docreg"><b>DOCTOR REGISTRATION</b></div>
+      <form novalidate (ngSubmit)="doctorRegister()" class="docform col-lg-4 m=auto"  #regForm="ngForm" >
+       
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" 
+                 required #name="ngModel" 
+                 class="form-control" 
+                 [class.is-invalid]="name.touched && name.invalid"
+                 [(ngModel)]="doctor.name">
+          <small class="text-danger" [class.d-none]="name.valid || name.untouched"> First name is required</small>      
+      </div>
+      
+      <div class="form-group">
+        <label>Phone (Enter number without country code)</label>
+        <input type="tel" name="phone" #phone="ngModel" required pattern="^\d{10}$"
+              class="form-control" 
+              [class.is-invalid]="phone.invalid && phone.touched"
+              [(ngModel)]="doctor.phone">
+              <div *ngIf="phone.errors && phone.touched">
+                <small class="text-danger" *ngIf="phone.errors.required">phone number is required</small>
+                <small class="text-danger" *ngIf="phone.errors.pattern">phone number must be 10 digits</small>
+              </div>    
+    </div>
+  
+    <div class="form-group">
+      <label>Specialization</label>
+      <input type="text" name="special" 
+             required #special="ngModel" 
+             class="form-control" 
+             [class.is-invalid]="special.touched && special.invalid"
+             [(ngModel)]="doctor.special">
+      <small class="text-danger" [class.d-none]="special.valid || special.untouched"> Specialization is required</small>      
+  </div>
+  
+  <div class="form-group">
+    <label>Qualification</label>
+    <input type="text" name="qualify" 
+           required #qualify="ngModel" 
+           class="form-control" 
+           [class.is-invalid]="qualify.touched && qualify.invalid"
+           [(ngModel)]="doctor.qualify">
+    <small class="text-danger" [class.d-none]="qualify.valid || qualify.untouched"> Qualification is required</small>      
+  </div>
+  
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" name="address" 
+             required #address="ngModel" 
+             class="form-control" 
+             [class.is-invalid]="address.touched && address.invalid"
+             [(ngModel)]="doctor.address">
+      <small class="text-danger" [class.d-none]="address.valid || address.untouched">Address is required</small>
+     
+    </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                class="form-control" [class.is-invalid]="email.invalid && email.touched" #email="ngModel"
+                [(ngModel)]="doctor.email">
+                <div *ngIf="email.errors && email.touched">
+                  <small class="text-danger" *ngIf="email.errors.required">email is required</small>
+                  <small class="text-danger" *ngIf="email.errors.pattern">please enter valid email</small>
+                </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" name="password" 
+                     required #password="ngModel" 
+                     class="form-control" 
+                     [class.is-invalid]="password.touched && password.invalid"
+                     [(ngModel)]="doctor.password">
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">Valid Password is required</small>
+             
+          </div>
+           <br>
+          <button class="btn btn-primary" type="submit" 
+          [disabled]="regForm.invalid">Submit form</button>
+          
+          </form>
+    
+    </section>
+    <router-outlet></router-outlet>

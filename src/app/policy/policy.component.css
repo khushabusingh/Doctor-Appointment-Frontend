@@ -1,0 +1,15 @@
+.policy img{
+    width:100%;
+    height: 600px;
+    object-position: center;
+    object-fit: fill;
+}
+.policy p{
+    margin: 30px;
+    padding: 10px;
+}
+.policy h2{
+    margin: 30px;
+    padding: 10px;
+    color: rgb(241, 112, 112);
+}

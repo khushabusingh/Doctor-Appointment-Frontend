@@ -1,0 +1,40 @@
+
+<table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Doctor Id</th>
+       
+        <th scope="col">Name</th>
+        <th scope="col">Specialization</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>       
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of doctors">
+        <th scope="row">{{doctor.docid}}</th>
+        <td>{{doctor.name}}</td>
+        <td>{{doctor.special}}</td>
+        <td>{{doctor.qualify}}</td>
+        <td>{{doctor.phone}}</td>
+        <td>{{doctor.address}}</td>
+        <td>{{doctor.email}}</td>
+        <td>{{doctor.password}}</td>
+       
+        <td>
+            <button (click)="updateDoctor(doctor.docid)" class="btn btn-info">Update</button>
+        </td>
+        <td>
+          <button (click)="deleteDoctor(doctor)" class="btn btn-info">Delete</button>
+
+      </td>
+      </tr>
+     
+    </tbody>
+  </table>
+

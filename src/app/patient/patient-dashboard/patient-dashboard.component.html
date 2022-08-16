@@ -1,0 +1,31 @@
+<div class="dash">
+  <nav class="navbar patient navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand patient"  [routerLink]="'patienthome'">Welcome: {{loggedInUsername}}</a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse patient navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav patient mr-auto">
+        <li class="nav-item patient active">
+          <a class="nav-link patient" [routerLink]="'patienthome'">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item patient active">
+          <a class="nav-link patient" [routerLink]="'appointment'">Make an appointment <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link patient" [routerLink]="'/patient/patientlogout'">Logout<span
+              class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn  patient btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  
+</div>
+<router-outlet></router-outlet>
+
